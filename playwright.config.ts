@@ -50,8 +50,8 @@ export default defineConfig({
   use: {
     baseURL: resolveBaseURL(),
     screenshot: 'only-on-failure',
-    video: 'on',
-    trace: 'on'
+    video: 'retain-on-failure',
+    trace: 'on-first-retry'
   },
 
   projects: [

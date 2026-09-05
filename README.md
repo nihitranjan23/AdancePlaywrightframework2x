@@ -68,10 +68,19 @@ TEST_AUTHOR=YourName
 
 ## Running Tests
 
+### Using NPM Scripts
+
 ```bash
 # Run all tests
-npx playwright test
+npm test
 
+# Or using npx directly
+npx playwright test
+```
+
+### Common Commands
+
+```bash
 # Run specific test file
 npx playwright test src/tests/e2e/e2e-checkout.spec.ts
 
@@ -86,6 +95,9 @@ npx playwright test --debug
 
 # Run specific project (browser)
 npx playwright test --project=chromium
+
+# Run tests matching a tag
+npx playwright test --grep "@p0"
 ```
 
 ## Fixtures
@@ -136,12 +148,13 @@ Configured in `playwright.config.ts`:
 
 ```typescript
 use: {
-  headless: false,                // Run in headed mode by default
-  screenshot: 'only-on-failure',  // Screenshots on failure
-  video: 'on',                    // Video for all tests
-  trace: 'on'                     // Traces for all tests
+  screenshot: 'only-on-failure',   // Screenshots on failure
+  video: 'retain-on-failure',      // Video only for failed tests
+  trace: 'on-first-retry'          // Trace on first retry
 }
 ```
+
+> **Note:** By default, tests run in **headless** mode. Use `--headed` flag for visible browser.
 
 ### Environments
 
