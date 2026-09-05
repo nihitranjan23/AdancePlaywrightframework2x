@@ -10,7 +10,7 @@ import { expect, Locator, Page } from '@playwright/test';
 
 // Import createLogger function and Logger type from the logger utility file.
 // The @utils alias maps to the utils folder, making imports cleaner.
-import { createLogger, type Logger } from '@utils/logger';
+import { createLogger, type Logger } from './logger';
 
 // Define a constant for the default maximum time (15 seconds) any action should wait before failing.
 // The underscore in 15_000 is just for readability; JavaScript treats it as 15000.
